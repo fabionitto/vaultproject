@@ -8,6 +8,12 @@ RUN yum update -y \
   && mv vault /usr/local/bin/ \
   && rm -f vault_0.5.2_linux_amd64.zip
 
+RUN groupadd -r vault \
+  && useradd -r -g vault vault \
+  && mkdir /vault
+
+USER vault
+
 COPY vault.hcl /etc/vault.hcl
 #COPY entrypoint.sh /usr/local/bin/
 COPY start.sh /usr/local/bin/
