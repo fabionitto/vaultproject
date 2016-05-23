@@ -4,7 +4,7 @@ MAINTAINER Fabio Nitto "fabio.nitto@gmail.com"
 COPY vault.hcl /etc/vault.hcl
 
 RUN yum update -y \
-  && yum install -y wget \
+  && yum install -y wget unzip \ 
   && wget https://releases.hashicorp.com/vault/0.5.2/vault_0.5.2_linux_amd64.zip \
   && unzip vault_0.5.2_linux_amd64.zip \
   && mv vault /usr/local/bin/ \
@@ -12,4 +12,4 @@ RUN yum update -y \
 
 EXPOSE 8200
 ENTRYPOINT [ "vault" ]
-CMD[ "server", "-config", "/etc/vault.hcl" ]
+CMD [ "server", "-config", "/etc/vault.hcl" ]
