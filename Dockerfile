@@ -12,7 +12,7 @@ RUN groupadd -r vault \
   && useradd -r -g vault vault \
   && mkdir /vault
 
-COPY vault.hcl /etc/vault.hcl
+COPY vault.hcl /vault/vault.hcl
 #COPY entrypoint.sh /usr/local/bin/
 COPY start.sh /usr/local/bin/
 
