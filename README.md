@@ -1,3 +1,5 @@
+[![](https://images.microbadger.com/badges/image/fabionitto/vaultproject.svg)](https://microbadger.com/images/fabionitto/vaultproject "Get your own image badge on microbadger.com")
+
 # Vault Project Container
 
 ## Description
